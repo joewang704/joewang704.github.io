@@ -1,5 +1,6 @@
 <script>
-	import Counter from './Counter.svelte';
+  import hakonePark from '$lib/images/hakone_park.mp4';
+  import hakonePoster from '$lib/images/hakone_frame1_awful.jpg';
 </script>
 
 <svelte:head>
@@ -8,15 +9,13 @@
 </svelte:head>
 
 <section>
-	<h1>
-		Welcome to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
+  <div class="video">
+    <video controls={false} autoplay loop muted poster={hakonePoster}>
+      <source src={hakonePark} />
+      <track kind="captions" />
+    </video>
+    <div class="welcome">Welcome :)</div>
+  </div>
 </section>
 
 <style>
@@ -28,7 +27,21 @@
 		flex: 0.6;
 	}
 
-	h1 {
-		width: 100%;
-	}
+  .video {
+    height: 80vh;
+    position: relative;
+  }
+
+  .welcome {
+    position: absolute;
+    right: .4rem;
+    bottom: .4rem;
+    color: white;
+    font-size: .8rem;
+  }
+
+  video {
+    height: 100%;
+    object-fit: cover;
+  }
 </style>

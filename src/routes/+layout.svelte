@@ -1,5 +1,6 @@
 <script>
 	import Header from './Header.svelte';
+  import '@fortawesome/fontawesome-free/css/all.min.css'
 	import '../app.css';
 </script>
 
@@ -11,7 +12,7 @@
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p>Built with <a href="https://kit.svelte.dev" target="_blank">Svelte</a></p>
 	</footer>
 </div>
 
