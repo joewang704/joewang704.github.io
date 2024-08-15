@@ -12,7 +12,8 @@
 	</main>
 
 	<footer>
-		<p>Built with <a href="https://kit.svelte.dev" target="_blank">Svelte</a></p>
+		<a href="https://github.com/joewang704" target="_blank"><i class="fa-brands fa-github"></i></a>
+		<a href="https://www.linkedin.com/in/jw704/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
 	</footer>
 </div>
 
@@ -36,14 +37,14 @@
 
 	footer {
 		display: flex;
-		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		padding: 12px;
 	}
 
 	footer a {
-		font-weight: bold;
+    padding: .5rem;
+    font-size: 1.6rem;
 	}
 
 	@media (min-width: 480px) {

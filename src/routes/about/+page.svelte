@@ -26,10 +26,12 @@
   <div class="list desc">
     <div>
       <img src={beehiveTrail} />
+      <br /><br />
       <span>Beehive Trail - Acadia National Park, Maine <i class="fa-solid fa-map-pin"></i></span>
     </div>
     <div>
       <img src={franconiaRidge} />
+      <br /><br />
       <span>Franconia Ridge Loop - White Mountain National Forest, New Hampshire <i class="fa-solid fa-map-pin"></i></span>
     </div>
   </div>
@@ -39,12 +41,12 @@
   <div class="list desc">
     <div>
       <img src={curry} />
-      <br />
+      <br /><br />
       Japanese Chicken Curry <a href="https://www.justonecookbook.com/simple-chicken-curry/">Recipe <i class="fa-solid fa-link"></i></a>
     </div>
     <div>
       <img src={lasagna} />
-      <br />
+      <br /><br />
       Adam Ragusea's 3-Day Lasagna <a href="https://www.youtube.com/watch?v=xER7YhsZcQ0">Recipe <i class="fa-solid fa-link"></i></a>
     </div>
   </div>
@@ -64,12 +66,13 @@
 <style>
 	.list {
 		display: flex;
+    flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
 
   .list > div {
-    margin: 0 1rem;
+    margin: 1rem 0;
   }
   
   .desc {
