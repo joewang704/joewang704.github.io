@@ -143,7 +143,6 @@
         item.addEventListener('click', () => {
           menuItems.forEach(i => i.classList.remove('active'))
           item.classList.add('active')
-          console.log(pageContents[idx])
           content.replaceChildren(...jsxToElements(pageContents[idx]))
         })
       })
