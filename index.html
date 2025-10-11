@@ -13,7 +13,7 @@
         color: wheat;
       }
 
-      #content {
+      .content {
         position: fixed;
         display: flex;
         width: 100%;
@@ -41,17 +41,6 @@
         text-decoration: underline;
       }
 
-      .fade-in {
-        opacity: 0;
-        animation: fadeIn 0.5s ease-out forwards;
-      }
-
-      @keyframes fadeIn {
-        to {
-          opacity: 1;
-        }
-      }
-
       #cat {
         position: fixed;
         bottom: -80px;
@@ -68,6 +57,8 @@
           font-size: 12px;
         }
       }
+
+      /* Animations */
 
       .spark {
         position: fixed;
@@ -91,6 +82,21 @@
           transform: translate(var(--x), var(--y)) scale(0);
         }
       }
+
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      .hidden {
+        visibility: hidden;
+      }
     </style>
   </head>
   <body class="fade-in">
@@ -101,10 +107,38 @@
       <div class="menu-item">projects</div>
     </div>
 
-    <div id="content">
+    <div id="content1" class="content">
       <video id="background-video" autoplay muted loop playsinline>
         <source src="./longwood_short.mp4" type="video/mp4" />
       </video>
+    </div>
+    <div id="content2" class="content hidden">
+      <div style="text-align: center">
+        <h1>about me</h1>
+        <p>front-end leaning fullstack dev 🌱</p>
+        <p>currently based in Boston 🍀</p>
+      </div>
+    </div>
+    <div id="content3" class="content hidden">
+      <div style="text-align: center">
+        <h1>resume</h1>
+        <a href="./assets/resume_2024_2.pdf" download>📄⬇️</a>
+      </div>
+    </div>
+    <div id="content4" class="content hidden">
+      <div style="text-align: center">
+        <h1>projects</h1>
+        <ul style="list-style-type: none; padding: 0">
+          <li>
+            <a
+              href="https://joewang704.github.io/morningstar"
+              style="color: lightblue"
+              target="_blank"
+              >MorningStar Dance Academy</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
     <img
       src="./cat.webp"
@@ -115,8 +149,6 @@
 
     <script>
       const menuItems = document.querySelectorAll('.menu-item')
-
-      const content = document.getElementById('content')
 
       const pageContents = [
         `<video id="background-video" autoplay muted loop playsinline>
@@ -140,10 +172,19 @@
       ]
 
       menuItems.forEach((item, idx) => {
+        const ids = ['content1', 'content2', 'content3', 'content4']
         item.addEventListener('click', () => {
           menuItems.forEach(i => i.classList.remove('active'))
           item.classList.add('active')
-          content.replaceChildren(...jsxToElements(pageContents[idx]))
+          // content.replaceChildren(...jsxToElements(pageContents[idx]))
+          ids.forEach((id, i) => {
+            const el = document.getElementById(id)
+            if (i === idx) {
+              el.classList.remove('hidden')
+            } else {
+              el.classList.add('hidden')
+            }
+          })
         })
       })
 
